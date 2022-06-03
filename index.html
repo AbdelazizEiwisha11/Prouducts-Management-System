@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>cruds</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container mt-5">
+            <!-- Start Head Section -->
+            <section class="head text-center">
+                <h1 class="mb-5">Prouducts Management System</h1>
+            </section>
+            <!-- End Head Section -->
+
+            <!-- Start Input Section -->
+            <section class="input">
+                <input  placeholder="titel" type="text" id="titelInput">
+                <div class="price">
+                    <input onkeyup="calcTotal()"  placeholder="price" type="number" id="priceInput" >
+                    <input onkeyup="calcTotal()"  placeholder="taxes" type="number" id="taxesInput" >
+                    <input onkeyup="calcTotal()"  placeholder="ads" type="number" id="adsInput" >
+                    <input onkeyup="calcTotal()"  placeholder="discount" type="number" id="discountInput" >
+                    <span class="ms-2 p-2 rounded-3 fs-5" id="total"></span>
+                </div>
+                <input  placeholder="count" type="number" id="countInput" >
+                <input  placeholder="category" type="text" id="categoryInput" >
+                <button id="create" class="btn btn-outline-success w-100 rounded-pill fs-5 mb-5">Create</button>
+            </section>
+            <!-- End Input Section -->
+
+            <!-- Start Output Section -->
+            <div class="output">
+                <input onkeyup="searchProducts(this.value)"  placeholder="Search" type="text" id="SearchInput" >
+                <div class="btnSearch d-flex justify-content-between">
+                    <button onclick="getSearchMood(this.id)" id="btnTitelSearch" class="btn btn-primary rounded-pill fs-5">Search By Titel</button>
+                    <button onclick="getSearchMood(this.id)" id="btnCategorySearch" class="btn btn-primary rounded-pill fs-5">Search By Category</button>
+                </div>
+
+                <button id="deleteAll" class="btn btn-danger  w-100 rounded-pill fs-5 mt-5 mb-3  d-none">delete All Prouducts (<span id="allProuductsCount"></span>)</button>
+
+                <table class="table text-light mt-4 fs-5 text-center">
+                    <tr>
+                        <th>id</th>
+                        <th>title</th>
+                        <th>price</th>
+                        <th>taxes</th>
+                        <th>ads</th>
+                        <th>discount</th>
+                        <th>total</th>
+                        <th>category</th>
+                        <th>update</th>
+                        <th>delete</th>
+                    </tr>
+                    <tbody id="tbody">
+
+
+                    </tbody>
+                </table>
+                
+
+            </div>
+            <!-- End Output Section -->
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>
